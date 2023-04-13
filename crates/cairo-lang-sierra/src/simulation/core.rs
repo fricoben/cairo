@@ -374,6 +374,7 @@ pub fn simulate<
         },
         CoreConcreteLibfunc::Cast(_) => unimplemented!(),
         CoreConcreteLibfunc::Uint256(_) => unimplemented!(),
+        CoreConcreteLibfunc::Secp256K1(_) => unimplemented!(),
     }
 }
 

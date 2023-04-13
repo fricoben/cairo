@@ -421,6 +421,9 @@ mod zeroable;
 use zeroable::Zeroable;
 use zeroable::NonZero;
 
+// Secp256K1.
+mod secp256k1;
+
 #[cfg(test)]
 mod test;
 

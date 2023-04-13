@@ -54,6 +54,7 @@ mod uint;
 mod uint128;
 mod uint256;
 
+pub mod secp256k1;
 #[cfg(test)]
 mod test_utils;
 
@@ -575,6 +576,7 @@ pub fn compile_invocation(
         CoreConcreteLibfunc::Nullable(libfunc) => nullable::build(libfunc, builder),
         CoreConcreteLibfunc::Debug(libfunc) => debug::build(libfunc, builder),
         CoreConcreteLibfunc::SnapshotTake(_) => misc::build_dup(builder),
+        CoreConcreteLibfunc::Secp256K1(_) => todo!(),
     }
 }
 

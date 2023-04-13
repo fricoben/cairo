@@ -315,5 +315,6 @@ pub fn core_libfunc_ap_change<InfoProvider: InvocationApChangeInfoProvider>(
         },
         CoreConcreteLibfunc::Debug(_) => vec![ApChange::Known(0)],
         CoreConcreteLibfunc::SnapshotTake(_) => vec![ApChange::Known(0)],
+        CoreConcreteLibfunc::Secp256K1(_) => vec![ApChange::Known(2), ApChange::Known(2)],
     }
 }

@@ -23,6 +23,7 @@ use super::nullable::{NullableLibfunc, NullableType};
 use super::pedersen::{PedersenLibfunc, PedersenType};
 use super::poseidon::{PoseidonLibfunc, PoseidonType};
 use super::range_check::RangeCheckType;
+use super::secp256k1::{Secp256K1EcLibfunc, Secp256K1EcPointType};
 use super::segment_arena::SegmentArenaType;
 use super::snapshot::{SnapshotTakeLibfunc, SnapshotType};
 use super::squashed_felt252_dict::SquashedFelt252DictType;
@@ -44,6 +45,7 @@ define_type_hierarchy! {
         EcOp(EcOpType),
         EcPoint(EcPointType),
         EcState(EcStateType),
+        Secp256K1EcPoint(Secp256K1EcPointType),
         Felt252(Felt252Type),
         GasBuiltin(GasBuiltinType),
         BuiltinCosts(BuiltinCostsType),
@@ -101,5 +103,6 @@ define_libfunc_hierarchy! {
         StarkNet(StarkNetLibfunc),
         Debug(DebugLibfunc),
         SnapshotTake(SnapshotTakeLibfunc),
+        Secp256K1(Secp256K1EcLibfunc),
     }, CoreConcreteLibfunc
 }

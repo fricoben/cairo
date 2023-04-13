@@ -324,7 +324,17 @@ pub fn core_libfunc_cost(
         },
         CoreConcreteLibfunc::Debug(_) => vec![steps(1).into()],
         CoreConcreteLibfunc::SnapshotTake(_) => vec![steps(0).into()],
+        Secp256K1(_) => syscall_cost(7, 7).into_iter().map(BranchCost::from).collect(),
     }
+}
+
+// TODO(yg): duplicate, move to some utils.
+const SYSTEM_CALL_STEPS: i32 = 100;
+/// Returns the costs for system calls.
+fn syscall_cost(success: i32, failure: i32) -> Vec<ConstCost> {
+    [success, failure]
+        .map(|steps| ConstCost { steps: SYSTEM_CALL_STEPS + steps, holes: 0, range_checks: 0 })
+        .to_vec()
 }
 
 /// Returns a postcost value for a libfunc - the cost of step token.

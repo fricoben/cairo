@@ -43,6 +43,7 @@ cairo_lang_test_utils::test_file_test_with_runner!(
         u128: "u128",
         u256: "u256",
         withdraw_gas_all: "withdraw_gas_all",
+        secp256k1: "secp256k1",
     },
     SmallE2ETestRunner
 );

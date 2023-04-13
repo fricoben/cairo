@@ -1,0 +1,57 @@
+//! > secp256k1_ec_mul libfunc
+
+//! > test_runner_name
+SmallE2ETestRunner
+
+//! > cairo
+fn foo(
+    p: secp256k1::Secp256K1EcPoint, m: felt252,
+) -> secp256k1::Secp256K1EcPoint {
+    secp256k1::secp256k1_ec_mul_syscall(p, m)
+}
+
+//! > casm
+
+//! > function_costs
+
+//! > sierra_code
+
+//! > ==========================================================================
+
+//! > secp256k1_ec_add libfunc
+
+//! > test_runner_name
+SmallE2ETestRunner
+
+//! > cairo
+fn foo(
+    p0: secp256k1::Secp256K1EcPoint, p1: secp256k1::Secp256K1EcPoint,
+) -> secp256k1::Secp256K1EcPoint {
+    secp256k1::secp256k1_ec_add_syscall(p0, p1)
+}
+
+//! > casm
+
+//! > function_costs
+
+//! > sierra_code
+
+//! > ==========================================================================
+
+//! > secp256k1_ec_neg libfunc
+
+//! > test_runner_name
+SmallE2ETestRunner
+
+//! > cairo
+fn foo(
+    p: secp256k1::Secp256K1EcPoint,
+) -> secp256k1::Secp256K1EcPoint {
+    secp256k1::secp256k1_ec_neg_syscall(p)
+}
+
+//! > casm
+
+//! > function_costs
+
+//! > sierra_code

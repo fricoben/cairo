@@ -62,6 +62,8 @@ pub fn get_type_size_map(
                 // to the map.
                 continue;
             }
+            // TODO(yg): Is the size really 1? If not, fix wherever needed.
+            CoreTypeConcrete::Secp256K1EcPoint(_) => Some(1),
         }?;
         type_sizes.insert(declaration.id.clone(), size);
     }
